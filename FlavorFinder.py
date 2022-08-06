@@ -5,7 +5,8 @@ import webbrowser
 
 koppsURL = requests.get('https://www.kopps.com/flavor-preview')
 soupKopps = BeautifulSoup(koppsURL.content, 'lxml')
-koppsFOD = soupKopps.find("span", class_ = "ribbon flavor-of-day").text.lower()
+koppsFOD1 = soupKopps.find_all("span", class_ = "ribbon flavor-of-day")[0].text.lower()
+koppsFOD2 = soupKopps.find_all("span", class_ = "ribbon flavor-of-day")[1].text.lower()
 
 oscarsURL = requests.get('http://www.oscarscustard.com/')
 soupOscars = BeautifulSoup(oscarsURL.content, 'lxml')
@@ -26,7 +27,7 @@ if (restaurantChoice == "O"):
     else:
         print("Thanks for visiting, goodbye!")
 elif (restaurantChoice == "K"):
-    print("At Kopps in Brookfield, the flavor of the day is " + koppsFOD + "!")
+    print("At Kopps in Brookfield, the flavor of the day is " + koppsFOD1 + " and " + koppsFOD2 + "!")
     seeWeb = input("Would you like to go to Kopp's web page? (Yes/No)")
     if (seeWeb == "Yes"):
         url = 'https://www.kopps.com/flavor-preview'
