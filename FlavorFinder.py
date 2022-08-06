@@ -19,7 +19,7 @@ print("Hello " + name+ ", welcome to my flavor of the day finder!")
 restaurantChoice = input("Would you like to see the flavor of the day for Oscar's or Kopp's (O/K)?")
 
 if (restaurantChoice == "O"):
-    print("At Oscars in Waukesha, the flavors of the day are " + oscarsFOD + "!")
+    print("At Oscars in Waukesha, the flavor of the day is " + oscarsFOD + "!")
     seeWeb = input("Would you like to go to Oscars's web page? (Yes/No)")
     if (seeWeb == "Yes"):
         url = 'http://www.oscarscustard.com/'
